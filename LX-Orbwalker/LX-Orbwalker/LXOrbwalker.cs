@@ -110,6 +110,11 @@ namespace LX_Orbwalker
 				modeLaneClear.AddItem(new MenuItem("LaneClear_attack", "Attack").SetValue(true));
 				menuModes.AddSubMenu(modeLaneClear);
 			
+				var menu = new Menu("My Mainmenu", "my_mainmenu", true);
+				var orbwalkerMenu = new Menu("My Orbwalker", "my_Orbwalker");
+				LXOrbwalker.AddToMenu(orbwalkerMenu);
+				menu.AddSubMenu(orbwalkerMenu);
+				menu.AddToMainMenu();
 				var modeLaneFreeze = new Menu("LaneFreeze", "lxOrbwalker_Modes_LaneFreeze");
 				modeLaneFreeze.AddItem(new MenuItem("LaneFreeze_Key", "Key").SetValue(new KeyBind("Z".ToCharArray()[0], KeyBindType.Press)));		
 				modeLaneFreeze.AddItem(new MenuItem("LaneFreeze_move", "Movement").SetValue(true));
